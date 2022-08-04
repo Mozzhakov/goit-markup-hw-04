@@ -21,7 +21,6 @@ rgba(255, 255, 255, 0.6)
   --primary-white-color: #ffffff;
   --primary-black-color: #000000;
   --secondary-bg-color: #f5f4fa;
-  --team-bg-color: #f5f4fa;
   --footer-bg-color: #2f303a;
   --main-btn-hover-color: #188ce8;
   --footer-contacts-color: rgba(255, 255, 255, 0.6);
@@ -29,6 +28,7 @@ rgba(255, 255, 255, 0.6)
   --header-border-color: #ececec;
   --main-font-family: 'Roboto', sans-serif;
   --secindary-font-family: 'Raleway', sans-serif;
+  --icon-color: #afb1b8;
 }
 
 p,
@@ -177,6 +177,10 @@ body {
   font-size: 14px;
   line-height: 1.14px;
   letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .header-contacts .link:hover,
@@ -184,13 +188,27 @@ body {
   color: var(--accent-color);
 }
 
+.header-icon {
+  fill: var(--primary-text-color);
+}
+
+.header-contacts .link:hover .header-icon {
+  fill: var(--accent-color);
+}
+
 /* Hero */
 
 .hero {
-  background-color: var(--footer-bg-color);
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
+  background-color: #c4c4c4;
+  background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/hero-bg.jpg);
+  height: 600px;
+  max-width: 1600px;
+  margin: 0 auto;
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
 .hero-title {
@@ -275,6 +293,17 @@ button {
   max-width: 270px;
 }
 
+.features-icon-box {
+  width: 270px;
+  height: 120px;
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
 .feature-list .item + .item {
   margin-left: 30px;
 }
@@ -314,11 +343,10 @@ button {
   margin-left: 30px;
 } */
 
-
 /* Team */
 
 .section.team {
-  background-color: var(--team-bg-color);
+  background-color: var(--secondary-bg-color);
 }
 
 .team-list {
@@ -330,7 +358,7 @@ button {
   margin-left: 30px;
 } */
 
-.section.team li {
+.section.team li.item {
   width: calc((100% - 90px) / 4);
   background-color: var(--primary-white-color);
   font-size: 16px;
@@ -354,6 +382,68 @@ button {
   padding-bottom: 30px;
 }
 
+.sn-list {
+  display: flex;
+  column-gap: 10px;
+  margin-top: 16px;
+  justify-content: center;
+}
+
+.sn-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--primary-white-color);
+  align-items: center;
+  justify-content: center;
+}
+
+.sn-link:hover,
+.sn-link:focus {
+  background-color: var(--accent-color);
+}
+
+.sn-link:hover .team-icon,
+.sn-link:focus .team-icon {
+  fill: var(--primary-white-color);
+}
+
+.team-icon {
+  fill: var(--icon-color);
+}
+
+/* Clients */
+
+.clients-list {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+}
+
+.clients-link {
+  display: flex;
+  width: 170px;
+  height: 92px;
+  border: 1px solid var(--icon-color);
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+}
+
+.clients-icon {
+  fill: var(--icon-color);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  border-color: var(--accent-color);
+}
+.clients-link:hover .clients-icon,
+.clients-link:focus .clients-icon {
+  fill: var(--accent-color);
+}
+
 /* Footer */
 
 .footer {
@@ -362,6 +452,10 @@ button {
   padding-bottom: 60px;
 }
 
+.footer-full {
+  display: flex;
+  gap: 70px;
+}
 .footer-logo {
   display: inline-block;
   color: var(--primary-white-color);
@@ -401,6 +495,39 @@ button {
   color: var(--accent-color);
 }
 
+.join-title {
+  display: block;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
+  margin-bottom: 20px;
+  margin-top: 12px;
+}
+
+.join-list {
+  display: flex;
+  gap: 10px;
+}
+
+.join-link {
+  display: flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  align-items: center;
+  justify-content: center;
+}
+
+.join-link:hover,
+.join-link:focus {
+  background-color: var(--accent-color);
+}
+
+.join-icon {
+  fill: var(--primary-white-color);
+}
+
 /* Portfolio */
 
 .portfolio a {
@@ -428,9 +555,20 @@ button {
   border: 1px solid var(--examples-border-color);
 }
 
+.examples-link {
+  display: block;
+}
+
+.examples-link:hover,
+.examples-link:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .work-example {
   padding: 20px 24px;
 }
+
 .portfolio-title {
   color: var(--title-text-color);
   font-size: 18px;
