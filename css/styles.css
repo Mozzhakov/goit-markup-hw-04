@@ -164,6 +164,7 @@ body {
 
 .header-contacts {
   display: flex;
+  align-items: center;
   margin-left: auto;
 }
 
@@ -209,6 +210,9 @@ body {
   max-width: 1600px;
   margin: 0 auto;
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  background-repeat: no-repeat;
+  /* background-size: cover; */
+  /* background-position: center; */
 }
 
 .hero-title {
@@ -397,20 +401,17 @@ button {
   background-color: var(--primary-white-color);
   align-items: center;
   justify-content: center;
+  color: var(--icon-color);
 }
 
 .sn-link:hover,
 .sn-link:focus {
   background-color: var(--accent-color);
-}
-
-.sn-link:hover .team-icon,
-.sn-link:focus .team-icon {
-  fill: var(--primary-white-color);
+  color: var(--primary-white-color);
 }
 
 .team-icon {
-  fill: var(--icon-color);
+  fill: currentColor;
 }
 
 /* Clients */
@@ -429,19 +430,17 @@ button {
   border-radius: 4px;
   align-items: center;
   justify-content: center;
+  color: var(--icon-color);
 }
 
 .clients-icon {
-  fill: var(--icon-color);
+  fill: currentColor;
 }
 
 .clients-link:hover,
 .clients-link:focus {
   border-color: var(--accent-color);
-}
-.clients-link:hover .clients-icon,
-.clients-link:focus .clients-icon {
-  fill: var(--accent-color);
+  color: var(--accent-color);
 }
 
 /* Footer */
@@ -455,7 +454,9 @@ button {
 .footer-full {
   display: flex;
   gap: 70px;
+  align-items: baseline;
 }
+
 .footer-logo {
   display: inline-block;
   color: var(--primary-white-color);
@@ -501,7 +502,6 @@ button {
   text-transform: uppercase;
   color: var(--primary-white-color);
   margin-bottom: 20px;
-  margin-top: 12px;
 }
 
 .join-list {
